@@ -4,16 +4,16 @@ import java.util.*;
 import java.io.*;
 
 public class BookManager{
-	private final static String PATH ="books.txt";
+	private final static String PATH ="CPRG251_A1_Group4\\res\\books.txt";
 	private ArrayList<Book> books=new ArrayList<>();
 	
 	public void run() throws IOException{
 		this.readFile();
-		System.out.print(books.get(0).toString());
+		System.out.print(books.toString());
 	}
 	
 	public void readFile() throws IOException {
-		Scanner fileReader = new Scanner(PATH);
+		Scanner fileReader = new Scanner(new File(PATH));
 		while(fileReader.hasNextLine()){
 			String[] record = fileReader.nextLine().split(";");
 			if(record[0].charAt(record[0].length()-1)=='0' || record[0].charAt(record[0].length()-1)=='1') {
